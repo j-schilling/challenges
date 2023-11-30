@@ -1,3 +1,25 @@
 * {
   box-sizing: border-box;
 }
+
+img {
+  border-radius: 20px;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.seerepos {
+  font-size: 20px;
+}
+
+.username {
+  opacity: 0.5;
+}
+
+.arrowbutton {
+  background-color: transparent;
+  border: none;
+  color: cornflowerblue;
+}
