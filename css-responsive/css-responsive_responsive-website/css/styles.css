@@ -247,13 +247,31 @@ width, etc. */
 @media (min-width: 900px) {
   .card-section {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: row;
   }
-  .product-card {
-    width: 40%;
+  .card-section > * {
+    width: 45%;
   }
-  .intro-text {
+}
+@media (min-width: 1200px) {
+  body,
+  .main-header,
+  .navbar {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .card-section {
+    overflow-x: hidden;
+    padding-bottom: 50px;
+  }
+
+  .product-card.--forest {
+    width: 100vw;
+  }
+  .main-content {
+    padding: 0;
   }
 }
 
