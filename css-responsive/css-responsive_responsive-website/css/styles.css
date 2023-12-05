@@ -244,7 +244,37 @@ width, etc. */
 
 /* Media Query Tablet */
 /* --- */
-/* Replace this comment with your media query. */
+@media (min-width: 900px) {
+  .card-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .card-section > * {
+    width: 45%;
+  }
+}
+@media (min-width: 1200px) {
+  body,
+  .main-header,
+  .navbar {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .card-section {
+    overflow-x: hidden;
+    padding-bottom: 50px;
+  }
+
+  .product-card.--forest {
+    width: 100vw;
+  }
+  .main-content {
+    padding: 0;
+  }
+}
+
 /* --- */
 
 /* Media Query Desktop */
