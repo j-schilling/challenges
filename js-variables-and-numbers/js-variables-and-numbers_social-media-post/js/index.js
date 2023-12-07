@@ -13,6 +13,8 @@ console.clear();
 
 // --^-- write your code here --^--
 
+const title:
+
 /*
 2. Log all variables to the console. Increase the likes by one and log the amount of likes again. Adapt your code from 1.1 if necessary.
 */
