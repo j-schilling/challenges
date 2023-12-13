@@ -38,12 +38,12 @@ function getGreeting(currentTime) {
 }
 
 function getDayColor(currentWeekday) {
-  if ((currentWeekday = 1)) {
-    return darkgray;
+  if (currentWeekday === 1) {
+    return "darkgrey";
   } else if (currentWeekday >= 6) {
-    return hotpink;
+    return "hotpink";
   } else {
-    return lightblue;
+    return "lightblue";
   }
 }
 
