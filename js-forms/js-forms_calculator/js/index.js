@@ -24,9 +24,31 @@ form.addEventListener("submit", (event) => {
 
   let result;
 
-  // --v-- write your code here --v--
+  const numberA = parseInt(event.target.elements.numberA.value);
+  const numberB = parseInt(event.target.elements.numberB.value);
+  let radioValue = event.target.elements.operator.value;
+  console.log(numberA);
+  console.log(numberB);
+  console.log(radioValue);
 
-  // --^-- write your code here --^--
+  switch (radioValue) {
+    case "addition":
+      result = add(numberA, numberB);
+      break;
+    case "subtraction":
+      result = subtract(numberA, numberB);
+      break;
+    case "multiplication":
+      result = multiply(numberA, numberB);
+      break;
+    case "division":
+      result = divide(numberA, numberB);
+      break;
+    default:
+      break;
+  }
+
+  console.log(result);
 
   resultOutput.textContent = result;
 });
