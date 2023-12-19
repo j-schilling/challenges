@@ -1,5 +1,7 @@
 console.clear();
 
+//See solution here:
+
 function handleUserLogin(onSuccess) {
   onSuccess("Jane Doe");
 }
