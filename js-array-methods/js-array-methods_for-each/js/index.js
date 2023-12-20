@@ -20,9 +20,17 @@ const colors = [
 ];
 
 colors.forEach((color) => {
-  console.log("Hello");
   const box = document.createElement("div");
   box.classList.add("color-box");
   box.style.backgroundColor = color;
   document.body.append(box);
 });
+
+function renderColorBox(color) {
+  const box = document.createElement("div");
+  box.classList.add("color-box");
+  box.style.backgroundColor = color;
+  document.body.append(box);
+}
+
+colors.forEach((color) => renderColorBox(color));
