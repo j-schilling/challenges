@@ -35,11 +35,20 @@ const recipes = [
  1: `map` exercises
 */
 
-const onlyTitles = null; // ['Crepes', ...]
+const onlyTitles = recipes.map((recipe) => {
+  return recipe.title;
+}); // ['Crepes', ...]
+console.log(onlyTitles);
 
-const titlesWithDuration = null; // ['Crepes (60min)', ...]
+const titlesWithDuration = recipes.map((recipe) => {
+  return `${recipe.title} (${recipe.duration}min)`;
+});
+console.log(titlesWithDuration); // ['Crepes (60min)', ...]
 
-const timePerServing = null; // [20, 10, 432, 12]
+const timePerServing = recipes.map((recipe) => {
+  return recipe.duration / recipe.servings;
+});
+console.log(timePerServing); // [20, 10, 432, 12]
 
 // EXTRA:
 
