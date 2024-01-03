@@ -55,7 +55,12 @@ console.log(timePerServing); // [20, 10, 432, 12]
 // HINT: use first map() and then Array.prototype.join() with "method chaining" like so:
 // myArray.map(...).join(', ');
 
-const allTitlesInOneString = null; // 'Crepes, Scrambled Eggs, ...'
+const allTitlesInOneString = recipes
+  .map((recipe) => {
+    return recipe.title;
+  })
+  .join(", ");
+console.log(allTitlesInOneString); // 'Crepes, Scrambled Eggs, ...'
 
 // For more information how to join an array,
 // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join#joining_an_array_four_different_ways
