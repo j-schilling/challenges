@@ -24,18 +24,21 @@ root.append(machine, spinButton, result);
 spinButton.addEventListener("click", async () => {
   try {
     spinButton.disabled = true;
+
+    // spinning text
     result.setSpinning();
+
+    // symbols and symbols count
     const symbols = await Promise.all([
       wheel1.spin(),
       wheel2.spin(),
       wheel3.spin(),
     ]);
-    console.log(symbols);
+
     const maxCount = getMaxCount(symbols);
-    console.log("maxCount: ", maxCount);
+
     //points
     var newPoints = 0;
-    console.log("newPointsInit: ", newPoints);
     switch (maxCount) {
       case 3:
         newPoints = 100;
@@ -49,7 +52,8 @@ spinButton.addEventListener("click", async () => {
       default:
         newPoints = 0;
     }
-    console.log("newPoints: ", newPoints);
+
+    //result
     result.setResult(newPoints);
   } catch {
     result.setMachineChoked();
