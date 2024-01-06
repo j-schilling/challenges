@@ -2,6 +2,7 @@ import { Wheel } from "./components/Wheel/Wheel.js";
 import { SpinButton } from "./components/SpinButton/SpinButton.js";
 import { Machine } from "./components/Machine/Machine.js";
 import { Result } from "./components/Result/Result.js";
+import { getMaxCount } from "./utils/symbols.js";
 
 console.clear();
 
@@ -21,7 +22,40 @@ root.append(machine, spinButton, result);
 // This time the function is already defined as an async function. 🫡
 //                                      ↙️
 spinButton.addEventListener("click", async () => {
-  spinButton.disabled = true;
+  try {
+    spinButton.disabled = true;
+    result.setSpinning();
+    const symbols = await Promise.all([
+      wheel1.spin(),
+      wheel2.spin(),
+      wheel3.spin(),
+    ]);
+    console.log(symbols);
+    const maxCount = getMaxCount(symbols);
+    console.log("maxCount: ", maxCount);
+    //points
+    var newPoints = 0;
+    console.log("newPointsInit: ", newPoints);
+    switch (maxCount) {
+      case 3:
+        newPoints = 100;
+        break;
+      case 2:
+        newPoints = 10;
+        break;
+      case 1:
+        newPoints = 0;
+        break;
+      default:
+        newPoints = 0;
+    }
+    console.log("newPoints: ", newPoints);
+    result.setResult(newPoints);
+  } catch {
+    result.setMachineChoked();
+  } finally {
+    spinButton.disabled = false;
+  }
   /**
    * Hint 1:
    * The wheel elements have a spin method that returns a promise.
@@ -62,8 +96,6 @@ spinButton.addEventListener("click", async () => {
    * and make sure it is always executed after the wheels have stopped,
    * even if an error was thrown.
    */
-
-  spinButton.disabled = false;
 });
 
 /**
