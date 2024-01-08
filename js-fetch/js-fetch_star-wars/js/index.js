@@ -34,8 +34,8 @@ const EXAMPLE_DATA = {
 };
 
 // Create dom element for a card and append it to the root
-const firstCard = Card(EXAMPLE_DATA);
-renderElement(firstCard);
+// const firstCard = Card(EXAMPLE_DATA);
+// renderElement(firstCard);
 
 fetchDataAndRender();
 
@@ -46,4 +46,10 @@ async function fetchDataAndRender() {
   console.log("response: ", response);
   const data = await response.json();
   console.log("data: ", data);
+  const cards = data.results;
+
+  cards.forEach((card) => {
+    const newCard = Card(card);
+    renderElement(newCard);
+  });
 }
