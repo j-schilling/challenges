@@ -14,15 +14,9 @@ export default function App() {
           <img className="round-image" src={logo} alt="logo" />
         </a>
         <Navigation>
-          <a className="navigation__link" href="#home">
-            Home
-          </a>
-          <a className="navigation__link" href="#about">
-            About
-          </a>
-          <a className="navigation__link" href="#impressum">
-            Impressum
-          </a>
+          <Link href="#home">Home</Link>
+          <Link href="#about">About</Link>
+          <Link href="#impressum">Impressum</Link>
         </Navigation>
         <button
           type="button"
