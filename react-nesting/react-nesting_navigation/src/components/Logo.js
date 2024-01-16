@@ -1,10 +1,9 @@
 import Image from "./Image";
-import logo from ".././img/logo.jpg";
 
-export default function Logo() {
+export default function Logo({ src, alt }) {
   return (
     <a href="#">
-      <Image src={logo} alt="logo" />
+      <Image src={src} alt={alt} />
     </a>
   );
 }
