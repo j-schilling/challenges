@@ -4,6 +4,7 @@ import logo from "./img/logo.jpg";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
+import Link from "./components/Link";
 
 export default function App() {
   return (
