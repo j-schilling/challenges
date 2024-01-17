@@ -32,7 +32,9 @@ export default function App() {
   return (
     <div className="app">
       {fruits &&
-        fruits.map((fruit) => <Card name={fruit.name} key={fruit.id} />)}
+        fruits.map((fruit) => (
+          <Card color={fruit.color} name={fruit.name} key={fruit.id} />
+        ))}
     </div>
   );
 }
