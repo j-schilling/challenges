@@ -8,13 +8,18 @@ export default function App() {
 
   const validCode = "🐡🐠🐋";
 
+  function handleClick(emoji) {
+    // setCode(code + emoji);
+    setCode(`${code}${emoji}`);
+  }
+
   return (
     <div className="container">
       <div className="button-container">
         <button
           type="button"
           onClick={() => {
-            setCode(code + "🐡");
+            handleClick("🐡");
           }}
         >
           <span role="img" aria-label="Pufferfish">
@@ -24,7 +29,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            setCode(code + "🐋");
+            handleClick("🐋");
           }}
         >
           <span role="img" aria-label="Whale">
@@ -34,7 +39,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            setCode(code + "🐠");
+            handleClick("🐠");
           }}
         >
           <span role="img" aria-label="Clownfish">
