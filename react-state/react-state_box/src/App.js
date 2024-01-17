@@ -10,10 +10,12 @@ export default function App() {
     console.log(isActive);
   }
 
+  let buttonText = isActive ? "Deactivate" : "Activate";
+
   return (
     <main>
       <div className={`box ${isActive ? "box--active" : ""}`} />
-      <button onClick={handleClick}>Activate</button>
+      <button onClick={handleClick}>{buttonText}</button>
     </main>
   );
 }
