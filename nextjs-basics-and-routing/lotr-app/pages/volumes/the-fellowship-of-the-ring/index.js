@@ -1,5 +1,7 @@
 import { volumes } from "../../../lib/data";
+// import Cover from "../../../public/images/the-fellowship-of-the-ring.png";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TheFellowship() {
   console.log(volumes);
@@ -20,6 +22,9 @@ export default function TheFellowship() {
           <li>{book.title}</li>
         </ul>
       ))}
+      <Image src={fellowshipData.cover} width={140} height={230} alt="" />
     </>
   );
 }
+
+// alt{fellowshipData.title}
