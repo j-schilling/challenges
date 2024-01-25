@@ -23,6 +23,12 @@ export default function TheFellowship() {
         </ul>
       ))}
       <Image src={fellowshipData.cover} width={140} height={230} alt="" />
+
+      <Link href="../volumes">
+        <button>All Volumes</button>
+      </Link>
+
+      <button>Next Volume</button>
     </>
   );
 }
