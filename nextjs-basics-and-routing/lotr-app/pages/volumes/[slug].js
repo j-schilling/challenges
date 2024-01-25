@@ -9,14 +9,18 @@ export default function TheFellowship() {
   console.log("volumes: ", volumes);
 
   const router = useRouter();
-  console.log("router: ", router);
-  console.log("router.query.slug: ", router.query.slug);
+
   const volumeData = volumes.find(({ slug }) => slug === router.query.slug);
   console.log("volumeData: ", volumeData);
 
-  //   function handlePreviousButton() {
-  //     if
-  //   }
+  const currentIndex = volumes.findIndex(
+    (element) => element.slug === router.query.slug
+  );
+  console.log("currentIndex: ", currentIndex);
+
+  const prevVolume = currentIndex > 0 ? volumes[currentIndex - 1] : null;
+  const nextVolume =
+    currentIndex < volumes.length - 1 ? volumes[currentIndex + 1] : null;
 
   if (!volumeData) {
     return (
@@ -44,11 +48,16 @@ export default function TheFellowship() {
       ))}
       <Image src={volumeData.cover} width={140} height={230} alt="" />
 
-      <Link href="volumes.">
-        <button>All Volumes</button>
-      </Link>
-
-      <button>Next Volume</button>
+      {prevVolume && (
+        <Link href={`/volumes/${prevVolume.slug}`}>
+          <button>Previous Volume</button>
+        </Link>
+      )}
+      {nextVolume && (
+        <Link href={`/volumes/${nextVolume.slug}`}>
+          <button>Next Volume</button>
+        </Link>
+      )}
     </>
   );
 }
