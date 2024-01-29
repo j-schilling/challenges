@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { StyledForm, StyledInputContainer } from "./Form.styled";
+import { useImmer } from "use-immer";
 
 export default function Form() {
-  const [mountain, setMountain] = useState({
+  const [mountain, updateMountain] = useImmer({
     name: "Mount Everest",
     values: {
       altitude: 8848,
