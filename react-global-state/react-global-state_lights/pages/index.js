@@ -1,6 +1,7 @@
 import Link from "../components/Link";
 
-export default function HomePage() {
+export default function HomePage({ lights }) {
+  console.log("lights: ", lights);
   return (
     <div>
       <h1>Home</h1>
