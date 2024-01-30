@@ -1,9 +1,12 @@
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import useSWR from "swr";
+import { useRouter } from "next/router";
 
 export default function Character() {
-  const id = 1;
+  const router = useRouter();
+  console.log("router: ", router);
+  const id = router.query.id;
 
   const { data, error, isLoading } = useSWR(
     `https://swapi.dev/api/people/${id}`
