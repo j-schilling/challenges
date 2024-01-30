@@ -1,17 +1,26 @@
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
+import useSWR from "swr";
 
 export default function Character() {
   const id = 1;
+
+  const { data, error, isLoading } = useSWR(
+    `https://swapi.dev/api/people/${id}`
+  );
+  console.log("data: ", data);
+
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return (
     <Layout>
       <Card
         id={id}
-        name={"Luke Skywalker"}
-        height={172}
-        eyeColor={"blue"}
-        birthYear={"19BBY"}
+        name={data.name}
+        height={data.height}
+        eyeColor={data.eye_color}
+        birthYear={data.birth_year}
       />
     </Layout>
   );
